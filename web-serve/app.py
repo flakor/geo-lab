@@ -9,7 +9,10 @@ Complete project details: http://randomnerdtutorials.com
 
 import RPi.GPIO as GPIO
 from flask import Flask, render_template, request
+import requests
+import json
 app = Flask(__name__)
+
 
 GPIO.setmode(GPIO.BCM)
 
