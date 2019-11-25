@@ -41,7 +41,7 @@ def main():
 
 @app.route("/list")
 def homepage():
-      r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
+   r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
       print(r.text)
    return render_template('movies.html', movies=json.loads(r.text)
 
