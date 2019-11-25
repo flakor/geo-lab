@@ -2,7 +2,7 @@
 
 Adapted excerpt from Getting Started with Raspberry Pi by Matt Richardson
 
-Modified by Rui Santos
+Modified by Pablo Ortiz add request api-rest
 Complete project details: http://randomnerdtutorials.com
 
 '''
@@ -43,7 +43,7 @@ def main():
 def homepage():
    r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
    print(r.text)
-   return render_template('movies.html', movies=json.loads(r.text)['title'])
+   return render_template('movies.html', movies=json.loads(r.text)[0]['title'])
 # The function below is executed when someone requests a URL with the pin number and action in it:
 @app.route("/<changePin>/<action>")
 def action(changePin, action):
