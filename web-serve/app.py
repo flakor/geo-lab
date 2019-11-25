@@ -50,7 +50,8 @@ def add():
    #r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
    #print(r.text)
    #return render_template('add.html', movies=json.loads(r.text))
-   return render_template('add.html','Todo...')
+   templateData = {'Todo...'}
+   return render_template('add.html', **templateData)
 
 
 # The function below is executed when someone requests a URL with the pin number and action in it:
