@@ -43,7 +43,11 @@ def main():
 def homepage():
    r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
    print(r.text)
-   return render_template('movies.html', movies=json.loads(r.text)[0]['title'])
+   items = []
+   for item in r:
+      items.append(item['id'])
+   print(items)
+   return render_template('movies.html', movies=json.loads(item.text)['id'])
 # The function below is executed when someone requests a URL with the pin number and action in it:
 @app.route("/<changePin>/<action>")
 def action(changePin, action):
