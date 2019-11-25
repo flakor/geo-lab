@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 GPIO.setmode(GPIO.BCM)
 
-current date and time
+#current date and time
 now = datetime.now()
 timestamp = datetime.timestamp(now)
 
