@@ -18,8 +18,9 @@ app = Flask(__name__)
 GPIO.setmode(GPIO.BCM)
 
 #current date and time
-now = datetime.now()
-timestamp = datetime.timestamp(now)
+#now = datetime.now()
+#timestamp = datetime.timestamp(now)
+ts = datetime.datetime.now().timestamp()
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
 pins = {
@@ -28,7 +29,7 @@ pins = {
    }
 
 random = {
-   10 : {'data' : 'GPIO 23', 'date' : timestamp},
+   10 : {'data' : 'GPIO 23', 'date' : ts},
    }
 
 # Set each pin as an output and make it low:
