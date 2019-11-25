@@ -32,7 +32,7 @@ pins = {
    24 : {'name' : 'GPIO 24', 'state' : GPIO.LOW}
    }
 
-random = {'id': t, 'title' : 'GPIO 23', 'date' : delta}
+random = {'id': datetime, 'title' : 'GPIO 23', 'date' : delta}
 
 # Set each pin as an output and make it low:
 for pin in pins:
