@@ -11,16 +11,20 @@ import RPi.GPIO as GPIO
 from flask import Flask, render_template, request
 import requests
 import json
-from datetime import datetime
+import time
+import datetime
 app = Flask(__name__)
 
 
 GPIO.setmode(GPIO.BCM)
 
-#current date and time
-#now = datetime.now()
-#timestamp = datetime.timestamp(now)
-ts = datetime.datetime.now().timestamp()
+time_string = '2018-07-16T23:50:55+0000'
+
+#Reduct 8 hours and print in human readable format
+struct_time = time.strptime(time_string, "%Y-%m-%dT%H:%M:%S+0000")
+t = datetime.datetime(*struct_time[:6])
+delta = datetime.timedelta(hours=8)
+print(t+delta)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
 pins = {
@@ -29,7 +33,7 @@ pins = {
    }
 
 random = {
-   10 : {'data' : 'GPIO 23', 'date' : ts},
+   10 : {'data' : 'GPIO 23', 'date' : delta},
    }
 
 # Set each pin as an output and make it low:
