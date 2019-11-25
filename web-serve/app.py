@@ -40,10 +40,19 @@ def main():
    return render_template('main.html', **templateData)
 
 @app.route('/list')
-def homepage():
+def list():
    r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
    print(r.text)
    return render_template('firestore.html', movies=json.loads(r.text))
+
+@app.route('/add')
+def add():
+   #r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
+   #print(r.text)
+   #return render_template('add.html', movies=json.loads(r.text))
+   return render_template('add.html','Todo...')
+
+
 # The function below is executed when someone requests a URL with the pin number and action in it:
 @app.route("/<changePin>/<action>")
 def action(changePin, action):
