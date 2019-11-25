@@ -33,7 +33,7 @@ pins = {
    }
 
 random = {
-   {'id': t 'title' : 'GPIO 23', 'date' : t+delta},
+   {'id': t, 'title' : 'GPIO 23', 'date' : t+delta},
    }
 
 # Set each pin as an output and make it low:
