@@ -53,7 +53,7 @@ def action(changePin, action):
       print("hola mundo")
 
       r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
- 
+      print(json.loads(r.text)['id'])
 
    if action == "off":
       GPIO.output(changePin, GPIO.LOW)
@@ -68,7 +68,7 @@ def action(changePin, action):
       'pins' : pins
    }
 
-   return render_template('main.html', **templateData, items=json.loads(r.text)['items'])
+   return render_template('main.html', **templateData)
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=80, debug=True)
