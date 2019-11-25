@@ -56,7 +56,7 @@ def action(changePin, action):
       print("hola mundo")
 
       r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
-      print(json.loads(r.text)['id'])
+      print(json.loads(r)['id'])
 
    if action == "off":
       GPIO.output(changePin, GPIO.LOW)
