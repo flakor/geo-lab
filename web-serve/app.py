@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 GPIO.setmode(GPIO.BCM)
 
-new_date = article.created_on + datetime.timedelta(0, elapsed_time_in_seconds)
+new_date = datetime.timedelta(0, elapsed_time_in_seconds)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
 pins = {
