@@ -50,7 +50,7 @@ def add():
    #r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
    #print(r.text)
    #return render_template('add.html', movies=json.loads(r.text))
-   templateData = {'Todo...'}
+   templateData = {'Todo...' : pins}
    return render_template('add.html', **templateData)
 
 
