@@ -41,8 +41,8 @@ def main():
 
 @app.route('/list')
 def homepage():
-   r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
-  return render_template('movies.html', movies=json.loads(r)
+      r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
+   return render_template('movies.html', movies=json.loads(r)
 
 # The function below is executed when someone requests a URL with the pin number and action in it:
 @app.route("/<changePin>/<action>")
@@ -57,7 +57,7 @@ def action(changePin, action):
       GPIO.output(changePin, GPIO.HIGH)
       # Save the status message to be passed into the template:
       message = "Turned " + deviceName + " on."
-         
+
    if action == "off":
       GPIO.output(changePin, GPIO.LOW)
       message = "Turned " + deviceName + " off."
