@@ -12,19 +12,13 @@ from flask import Flask, render_template, request
 import requests
 import json
 import time
-import datetime
+from datetime import timedelta
 app = Flask(__name__)
 
 
 GPIO.setmode(GPIO.BCM)
 
-time_string = '2018-07-16T23:50:55+0000'
-
-#Reduct 8 hours and print in human readable format
-struct_time = time.strptime(time_string, "%Y-%m-%dT%H:%M:%S+0000")
-t = datetime.datetime(*struct_time[:6])
-delta = datetime.timedelta(hours=8)
-print(t+delta)
+new_date = article.created_on + datetime.timedelta(0, elapsed_time_in_seconds)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
 pins = {
