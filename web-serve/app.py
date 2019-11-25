@@ -11,15 +11,24 @@ import RPi.GPIO as GPIO
 from flask import Flask, render_template, request
 import requests
 import json
+from datetime import datetime
 app = Flask(__name__)
 
 
 GPIO.setmode(GPIO.BCM)
 
+current date and time
+now = datetime.now()
+timestamp = datetime.timestamp(now)
+
 # Create a dictionary called pins to store the pin number, name, and pin state:
 pins = {
    23 : {'name' : 'GPIO 23', 'state' : GPIO.LOW},
    24 : {'name' : 'GPIO 24', 'state' : GPIO.LOW}
+   }
+
+random = {
+   10 : {'data' : 'GPIO 23', 'date' : timestamp},
    }
 
 # Set each pin as an output and make it low:
@@ -50,7 +59,7 @@ def add():
    #r = requests.get('https://todo-ylmfpvu27a-uc.a.run.app/list')
    #print(r.text)
    #return render_template('add.html', movies=json.loads(r.text))
-   templateData = {'prueba' : pins}
+   templateData = {'prueba' : random}
    return render_template('add.html', **templateData)
 
 
