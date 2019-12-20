@@ -2,9 +2,23 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
-  production: false
-};
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyAIGDdC0ypd1JqAkEM9xKghHZbaaBF2ocs",
+    authDomain: "geocentinela-emt.firebaseapp.com",
+    databaseURL: "https://geocentinela-emt.firebaseio.com",
+    projectId: "geocentinela-emt",
+    storageBucket: "geocentinela-emt.appspot.com",
+    messagingSenderId: "769006050872",
+    appId: "1:769006050872:web:95d276da873972ff7410cd",
+    measurementId: "G-J5ZYJXZMM1"
+  }
+ };
+
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

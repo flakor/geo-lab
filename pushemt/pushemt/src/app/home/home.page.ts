@@ -13,7 +13,7 @@ export class HomePage implements OnInit {
 
   constructor(public pushService: PushService,
               private applicationRef: ApplicationRef) {}
-  ngOnInit(){
+  ngOnInit() {
     this.pushService.pushListener.subscribe( noti => {
        this.mensajes.unshift( noti );
        this.applicationRef.tick();

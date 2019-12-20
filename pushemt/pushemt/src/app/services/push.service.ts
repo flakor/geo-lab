@@ -26,7 +26,7 @@ export class PushService {
     this.cargarMensajes();
   }
 
-  async getMensajes(){
+  async getMensajes() {
     await this.cargarMensajes();
     return[...this.mensajes];
   }

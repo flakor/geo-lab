@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Dashboard</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col text-center>
+                Welcome to Dashboard!
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col text-center>
+                Your Registered EmailID : {{userEmail}}
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-list>
+        <ion-list-header>
+            <ion-label>UserId</ion-label>
+        </ion-list-header>
+        <ion-item>
+            <ion-label>
+                <h3>{{ pushService.userId}}</h3>
+
+            </ion-label>
+        </ion-item>
+
+        <ion-list-header>
+            <ion-label>Alarmas</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let push of mensajes">
+            <ion-label>
+                <h3>{{ push.title}}</h3>
+                <p>{{push.body}}</p>
+                <p>{{push.additionalData | json}}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer (click)="logout()">
+    <ion-toolbar color="secondary">
+        <ion-title>Log out</ion-title>
+    </ion-toolbar>
+</ion-footer>

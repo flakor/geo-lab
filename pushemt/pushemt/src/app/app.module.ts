@@ -11,16 +11,29 @@ import { AppRoutingModule } from './app-routing.module';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 
+import { environment } from 'src/environments/environment';
+import { AuthenticationService } from './services/authentication.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
+import * as firebase from 'firebase';
+
+firebase.initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), IonicStorageModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
+    AppRoutingModule,
+    AngularFireAuthModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
     OneSignal,
+    AuthenticationService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
