@@ -24,12 +24,12 @@ export class DashboardPage implements OnInit {
 
   ngOnInit() {
 
-    this.pushService.pushListener.subscribe( noti => {
-      this.mensajes.unshift( noti );
-      this.applicationRef.tick();
-     });
     if (this.authService.userDetails()) {
       this.userEmail = this.authService.userDetails().email;
+      this.pushService.pushListener.subscribe( noti => {
+        this.mensajes.unshift( noti );
+        this.applicationRef.tick();
+       });
 
     } else {
       this.navCtrl.navigateBack('');
